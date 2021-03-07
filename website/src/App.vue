@@ -1,8 +1,9 @@
 <template>
   <div>
-    <div class="w-full flex justify-center">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="w-full flex justify-evenly">
+      <div><router-link to="/">Home</router-link></div>
+      <div><router-link to="/about">About</router-link></div>
+      <div><router-link to="/list">List</router-link></div>
     </div>
     <router-view />
   </div>

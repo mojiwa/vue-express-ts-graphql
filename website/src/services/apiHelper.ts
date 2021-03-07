@@ -28,3 +28,17 @@ export async function Add(numberOne: number, numberTwo: number) {
   });
   return await response.json();
 }
+
+export async function GetList() {
+  const response = await fetch(baseUrl, {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({query: "{ getList }" }),
+    agent: agent
+  });
+  return await response.json();
+}

@@ -14,6 +14,7 @@ let schema = buildSchema(`
         hello: String,
         goodbye: String,
         add(numberOne: Int!, numberTwo: Int!): Int,
+        getList: [String],
     }
 `);
 
@@ -25,6 +26,10 @@ function add(number1:number, number2:number) : number {
     return number1+number2
 } 
 
+function getList() {
+    return ["Item 1", "Item 2", "Item 3", "Item 4"]
+}
+
 // when the query is made, state what is returned
 let root = {
     hello: () => {
@@ -32,6 +37,7 @@ let root = {
     },
     goodbye: () => goodbye(),    
     add: (args: any) => add(args.numberOne, args.numberTwo),
+    getList: () => getList(),
 };
 
 // all api requests are made to a single graphql endpoint
